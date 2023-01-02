@@ -1,11 +1,11 @@
-import React from 'react'
-
+import MainHeader from './components/header/MainHeader'
+import MainProduct from './components/product/MainProduct'
 const App = () => {
   return (
     <>
-    
-    <h1 className='text-center'>Hola</h1>
+      <MainHeader/>
 
+      <MainProduct/>
     </>
   )
 }
