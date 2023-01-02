@@ -3,7 +3,7 @@ const MainProduct = () => {
   return (
     <>
 
-          <main className='flex'>
+          <main className='flex px-6'>
               <section>
                   <img src={imgHero} alt="" />
               </section>
