@@ -1,10 +1,11 @@
 import PrevIcon from '../../icons/PrevIcon'
 import NextIcon from '../../icons/NextIcon'
+import CloseIcon from '../../icons/CloseIcon'
 import { useState } from 'react'
 
 
 
-const SliderProduct = ({arrayProducts, arrayProductsSmall}) => {
+const SliderProduct = ({arrayProducts, arrayProductsSmall,handleOpenModal,handleCloseModal,isOpenModal = false, ...props}) => {
 
     const [index, setIndex] = useState(0)
 
@@ -19,23 +20,26 @@ const SliderProduct = ({arrayProducts, arrayProductsSmall}) => {
   return (
     <>
     
-          <section className='grid md:grid-cols-4 md:grid-rows-[4fr_1fr] gap-4 lg:px-20'>
+          <section {...props}>
               <div className='relative col-start-1 col-end-5 row-start-1 row-end-2 '>
-                  <img className='md:rounded-md' src={arrayProducts[index]} alt="" />
-                  <div className='absolute top-1/2 w-full flex justify-between px-2'>
-                      <button className='md:hidden bg-white rounded-full h-10 w-10 grid place-items-center' onClick={handlePrev}><PrevIcon /></button>
-                      <button className='md:hidden bg-white rounded-full h-10 w-10 grid place-items-center'onClick={handleNext}><NextIcon /></button>
-                  </div>
+              {isOpenModal && <button onClick={handleCloseModal}><CloseIcon/></button> }
+                  <img className='md:rounded-md' src={arrayProducts[index]} alt=""  onClick={handleOpenModal}/>
+                {isOpenModal && <div className='absolute top-1/2 w-full flex justify-between px-2'>
+                      <button className='bg-white rounded-full h-10 w-10 grid place-items-center' onClick={handlePrev}><PrevIcon /></button>
+                      <button className=' bg-white rounded-full h-10 w-10 grid place-items-center'onClick={handleNext}><NextIcon /></button>
+                  </div>}
               </div>
               {
-                  arrayProductsSmall.map((item, i) => (
-                      <div onClick={() => { setIndex(i) }} key={item}>
-                         <img
-                           src={item}
-                           alt=""
-                           className='hidden
+                  arrayProductsSmall.map((item, i) => ( /* Como accedemos al array con map, podemos tener acceso al indice */
+                    <div className='relative overflow-hidden ' onClick={() => { setIndex(i) }} key={item}>
+                          <img
+                              src={item}
+                              alt=""
+                              className='hidden
                            md:block rounded-md cursor-pointer'
-                           /></div>
+                          />
+                          <span className={` hover:bg-[rgba(255,255,255,0.5)] top-0 absolute h-full w-full  ${i=== index && "bg-[rgba(255,255,255,0.5)]"}`}></span>
+                    </div>
                   ))
               }
           </section>
