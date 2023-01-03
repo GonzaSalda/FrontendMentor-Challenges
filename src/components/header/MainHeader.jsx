@@ -19,7 +19,7 @@ const MainHeader = () => {
 
   return (
     <>
-          <header className='container mx-auto flex justify-between px-6 my-5'>
+          <header className='container mx-auto flex justify-between px-5 md:px-11 py-5'>
               <div className='flex items-center gap-5'>
               <button className='md:hidden' onClick={handleOpenMenu}><MenuIcons/></button>
                   <img src={LogoSneakers} alt="Logo sneakers"/>
@@ -41,6 +41,7 @@ const MainHeader = () => {
                   <img src={AvatarImage} alt="" className='w-8'/>
               </div>
           </header>
+          <span className='container md:block mx-auto  hidden h-[1px] w-full bg-gray-300 mb-5'></span>
     </>
   )
 }

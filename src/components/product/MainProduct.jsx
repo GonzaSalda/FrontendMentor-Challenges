@@ -1,33 +1,12 @@
-import imgHero from '@/assets/images/image-product-1.jpg'
+import DetailProduct from './DetailProduct'
+import SliderProduct from './SliderProduct'
 const MainProduct = () => {
   return (
     <>
 
-          <main className='flex px-6'>
-              <section>
-                  <img src={imgHero} alt="" />
-              </section>
-              <section>
-                  <p>Sneaker Company</p>
-                  <h2>Fall Limited Edition Sneakers</h2>
-                  <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
-                      durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-                  <p>
-                      <span>$125.00</span>
-                      <span>50%</span>
-                  </p>
-                  <p>$250.00</p>
-                  <div>
-                      <div>
-                          <button>-</button>
-                          <span>0</span>
-                          <button>+</button>
-                      </div>
-                      <div>
-                          <button>Add to cart</button>
-                      </div>
-                  </div>
-              </section>
+          <main className='grid grid-cols-1 md:grid-cols-2 '>
+              <SliderProduct />
+              <DetailProduct />
           </main>
 
     </>
