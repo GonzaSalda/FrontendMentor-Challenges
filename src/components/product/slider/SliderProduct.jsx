@@ -23,7 +23,7 @@ const SliderProduct = ({arrayProducts, arrayProductsSmall,handleOpenModal,handle
           <section {...props}>
               <div className='relative col-start-1 col-end-5 row-start-1 row-end-2 '>
               {isOpenModal && <button onClick={handleCloseModal}><CloseIcon/></button> }
-                  <img className='md:rounded-md' src={arrayProducts[index]} alt=""  onClick={handleOpenModal}/>
+                  <img className='object-cover md:rounded-md' src={arrayProducts[index]} alt=""  onClick={handleOpenModal}/>
                 {isOpenModal && <div className='absolute top-1/2 w-full flex justify-between px-2'>
                       <button className='bg-white rounded-full h-10 w-10 grid place-items-center' onClick={handlePrev}><PrevIcon /></button>
                       <button className=' bg-white rounded-full h-10 w-10 grid place-items-center'onClick={handleNext}><NextIcon /></button>
@@ -31,14 +31,14 @@ const SliderProduct = ({arrayProducts, arrayProductsSmall,handleOpenModal,handle
               </div>
               {
                   arrayProductsSmall.map((item, i) => ( /* Como accedemos al array con map, podemos tener acceso al indice */
-                    <div className='relative overflow-hidden ' onClick={() => { setIndex(i) }} key={item}>
+                    <div className='relative overflow-hidden  ' onClick={() => { setIndex(i) }} key={item}>
                           <img
                               src={item}
                               alt=""
-                              className='hidden
+                              className='hidden object-cover
                            md:block rounded-md cursor-pointer'
                           />
-                          <span className={` hover:bg-[rgba(255,255,255,0.5)] top-0 absolute h-full w-full  ${i=== index && "bg-[rgba(255,255,255,0.5)]"}`}></span>
+                          <span className={`absolute top-0  h-full w-full hover:bg-[rgba(255,255,255,0.5)]   ${i=== index && "bg-[rgba(255,255,255,0.5)]"}`}></span>
                     </div>
                   ))
               }

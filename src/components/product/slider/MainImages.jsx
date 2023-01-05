@@ -24,14 +24,20 @@ const MainImages = ({arrayProducts ,arrayProductsSmall}) => {
               />
 
         {
-            isOpenModal &&
+            isOpenModal && (
+            <>
             <SliderProduct
             arrayProducts={arrayProducts}
             arrayProductsSmall={arrayProductsSmall} 
             isOpenModal={isOpenModal}
             handleCloseModal= {handleCloseModal}
-            className='hidden md:absolute md:grid md:grid-cols-4 md:grid-rows-[4fr_1fr] gap-4 lg:px-20 md:max-w-xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 lg:mt-8'/>
-        }
+            className='hidden md:absolute md:grid md:grid-cols-4 md:grid-rows-[4fr_1fr] gap-4 lg:px-20 md:max-w-xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:mt-16 lg:mt-11 z-10'/>
+            
+                <span className='absolute left-0 w-full h-full  backdrop-blur-sm'></span>
+
+            </>
+
+            )}
          
 
 

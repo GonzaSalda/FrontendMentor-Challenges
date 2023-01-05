@@ -17,6 +17,17 @@ const arrayProducts = [imgProduct1,imgProduct2,imgProduct3,imgProduct4]
 
 const arrayProductsSmall = [imgProductSmall1,imgProductSmall2,imgProductSmall3,imgProductSmall4]
 
+const products = 
+  {
+    title: 'Fall Limited Edition Sneakers',
+    description: "These low-profile sneakers are your perfect casual wear companion. Featuring adurable rubber outer sole, they’ll withstand everything the weather can offer.",
+    id: 1,
+    price: 250.00,
+    descount: 0.5,
+    images: arrayProducts,
+    imagesSmall:arrayProductsSmall,
+  }
+
 
 const MainProduct = () => {
   return (
@@ -24,7 +35,7 @@ const MainProduct = () => {
 
           <main className='grid grid-cols-1 md:grid-cols-2 md:container'>
               <MainImages arrayProducts={arrayProducts} arrayProductsSmall={arrayProductsSmall}/>
-              <DetailProduct />
+              <DetailProduct products = {products} />
           </main>
 
     </>
